@@ -1,3 +1,22 @@
-<p>
-  home works!
-</p>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Contact</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{user['name']}}</td>
+      <td>{{user['email']}}</td>
+      <td>{{user['contact']}}</td>
+      <td>
+        <a routerLink="edit" title="Edit" class="btn btn-info" ><span class="fa fa-edit"></span></a>&nbsp;&nbsp;
+        <a routerLink="edit" title="View" class="btn btn-success" ><span class="fa fa-eye"></span></a>&nbsp;&nbsp;
+        <button class="btn btn-danger" title="Delete" ><span class="fa fa-trash"></span></button>
+      </td>
+    </tr>
+  </tbody>
+</table>
