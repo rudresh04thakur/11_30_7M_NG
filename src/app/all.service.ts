@@ -11,14 +11,21 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AllService {
-
-  constructor(private _http: HttpClient) { }
+  
+   constructor(private _http: HttpClient) { }
 
   register(data) {
-    return this._http.post("http://localhost/client_api_2/register.php", data, httpOptions).pipe(map((res) => { return res }));
+    return this._http.post("http://localhost/client_api_2/register.php", data).pipe(map((res) => { return res }));
   }
 
   getUsers(){
-    return this._http.post("http://localhost/client_api_2/getUsers.php", null, httpOptions).pipe(map((res) => { return res }));
+    return this._http.post("http://localhost/client_api_2/getUsers.php", null).pipe(map((res) => { return res }));
+  }
+
+  getUserById(id){
+    return this._http.get("http://localhost/client_api_2/getUserById.php?id="+id).pipe(map((res) => { return res }));
+  }
+  update(data){
+    return this._http.post("http://localhost/client_api_2/update.php",data).pipe(map((res) => { return res }));
   }
 }
