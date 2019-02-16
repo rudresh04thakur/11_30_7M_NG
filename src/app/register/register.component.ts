@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { AllService } from '../all.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
     status:''
   }
   regiF: FormGroup;
-  constructor(private _fb: FormBuilder, private _ser: AllService, private _ar: ActivatedRoute) {
+  constructor(private _fb: FormBuilder, private _ser: AllService, private _ar: ActivatedRoute,private _r:Router) {
     this.regiF = this._fb.group({
       id: [''],
       name: ['', [Validators.required, Validators.pattern("[a-zA-Z]{3,}[ ]{1}[a-zA-Z]{3,}")]],
@@ -60,6 +60,7 @@ export class RegisterComponent implements OnInit {
         console.log(res);
       })
     }
+    this._r.navigate(['/home']);
     //console.log(data);
   }
 }

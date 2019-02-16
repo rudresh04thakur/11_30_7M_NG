@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  @Input('username') userName;
   menus =[
     {title:"Home",path:"home"},
     {title:"Login",path:"login"},
@@ -20,8 +21,9 @@ export class HeaderComponent implements OnInit {
     }
   ]
   constructor() { }
-
+  
   ngOnInit() {
+    
   }
 
 }

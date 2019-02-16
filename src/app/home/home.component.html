@@ -14,9 +14,15 @@
       <td>{{user['contact']}}</td>
       <td>
         <a routerLink="/edit/{{user['id']}}" title="Edit" class="btn btn-info" ><span class="fa fa-edit"></span></a>&nbsp;&nbsp;
-        <a routerLink="/edit" title="View" class="btn btn-success" ><span class="fa fa-eye"></span></a>&nbsp;&nbsp;
-        <button class="btn btn-danger" title="Delete" ><span class="fa fa-trash"></span></button>
+        <a routerLink="/view/{{user['id']}}" title="View" class="btn btn-success" ><span class="fa fa-eye"></span></a>&nbsp;&nbsp;
+        <button (click)="delete(user['id'])" class="btn btn-danger" title="Delete" ><span class="fa fa-trash"></span></button>
       </td>
     </tr>
   </tbody>
 </table>
+<div>Upper Case : {{"Gopal Thakur" | uppercase}}</div>
+<div>Lower Case : {{"Gopal Thakur" | lowercase}}</div>
+<div>Number Case : {{23 | number:'2.2'}}</div>
+<div>Percent Case : {{0.3 | percent:'2.2'}}</div>
+<div>Date Case : {{"03/02/2017" | date:'long'}}</div>
+<div>Currency Case : {{23 | currency:'USD':true:'2.2'}}</div>

@@ -3,8 +3,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 //import {Http} from '@angular/http';
 import { map } from 'rxjs/operators';
 //const header = new HttpHeaders().set({"":""})
-const httpOptions = {
-  headers: new HttpHeaders().append("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+export const httpOptions = {
+  headers: new HttpHeaders().append("Access-Control-Allow-Methods", "*")
+  .append("Access-Control-Request-Headers", "*").append("Access-Control-Allow-Origin", "*"),
 };
 
 @Injectable({
@@ -27,5 +28,9 @@ export class AllService {
   }
   update(data){
     return this._http.post("http://localhost/client_api_2/update.php",data).pipe(map((res) => { return res }));
+  }
+
+  delete(id){
+    return this._http.get("http://localhost/client_api_2/delete.php?id="+id).pipe(map((res) => { return res }));
   }
 }

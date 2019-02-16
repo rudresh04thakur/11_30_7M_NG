@@ -10,6 +10,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 //import { AllService } from './all.service';
 import { HttpClientModule } from '@angular/common/http';
+import { KeysPipe } from './keys.pipe';
+import { ViewComponent } from './view/view.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    KeysPipe,
+    ViewComponent
   ],
   imports: [
     BrowserModule,
