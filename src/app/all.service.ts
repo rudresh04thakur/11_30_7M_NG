@@ -33,4 +33,12 @@ export class AllService {
   delete(id){
     return this._http.get("http://localhost/client_api_2/delete.php?id="+id).pipe(map((res) => { return res }));
   }
+
+  login(data){
+    return this._http.post("http://localhost/client_api_2/login.php",data).pipe(map((res) => { return res }));
+  }
+
+  heartBit(id){
+    return this._http.post("http://localhost/client_api_2/checkLife.php",id).pipe(map((res) => { return res }));
+  }
 }

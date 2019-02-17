@@ -21,13 +21,13 @@ export class RegisterComponent implements OnInit {
   constructor(private _fb: FormBuilder, private _ser: AllService, private _ar: ActivatedRoute,private _r:Router) {
     this.regiF = this._fb.group({
       id: [''],
-      name: ['', [Validators.required, Validators.pattern("[a-zA-Z]{3,}[ ]{1}[a-zA-Z]{3,}")]],
-      email: ['', [Validators.required, Validators.pattern("[a-zA-Z0-9]{3,}[@]{1}[a-zA-Z]{3,}[.]{1}[a-zA-Z]{2,}")]],
-      contact: ['', [Validators.required, Validators.pattern("[0-9]{10}")]],
-      password: ['', [Validators.required, Validators.pattern("(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")]],
+      name: ['Gopal Thakur', [Validators.required, Validators.pattern("[a-zA-Z]{3,}[ ]{1}[a-zA-Z]{3,}")]],
+      email: ['gopal04thakur@gmail.com', [Validators.required, Validators.pattern("[a-zA-Z0-9]{3,}[@]{1}[a-zA-Z]{3,}[.]{1}[a-zA-Z]{2,}")]],
+      contact: ['8983939246', [Validators.required, Validators.pattern("[0-9]{10}")]],
+      password: ['Gop@l0540vbdv', [Validators.required, Validators.pattern("(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")]],
       address: this._fb.group({
-        city: ['', [Validators.required, Validators.pattern("[a-zA-Z]{3,}")]],
-        state: ['', [Validators.required, Validators.pattern("[a-zA-Z]{3,}")]]
+        city: ['Pune', [Validators.required, Validators.pattern("[a-zA-Z]{3,}")]],
+        state: ['Maharashtra', [Validators.required, Validators.pattern("[a-zA-Z]{3,}")]]
       }),
       status: [''],
     })
