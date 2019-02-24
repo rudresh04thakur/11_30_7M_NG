@@ -12,6 +12,8 @@ import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { KeysPipe } from './keys.pipe';
 import { ViewComponent } from './view/view.component';
+import { DemoDirective } from './demo.directive';
+import { ObComponent } from './ob/ob.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ViewComponent } from './view/view.component';
     LoginComponent,
     RegisterComponent,
     KeysPipe,
-    ViewComponent
+    ViewComponent,
+    DemoDirective,
+    ObComponent
   ],
   imports: [
     BrowserModule,

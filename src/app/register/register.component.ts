@@ -58,6 +58,7 @@ export class RegisterComponent implements OnInit {
     } else {
       this._ser.register(data).subscribe((res) => {
         console.log(res);
+        this.regiF.reset();
       })
     }
     this._r.navigate(['/home']);
